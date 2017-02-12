@@ -39,6 +39,11 @@ public class EchoDialog : IDialog<object>
                 "Didn't get that!",
                 promptStyle: PromptStyle.Auto);
         }
+        if (message.Text == "foo")
+        {
+            await context.PostAsync($"{this.count++}: BAR BAR BAR");
+            context.Wait(MessageReceivedAsync);
+        }
         else
         {
             await context.PostAsync($"{this.count++}: You said {message.Text}");
