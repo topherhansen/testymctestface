@@ -74,7 +74,8 @@ public class EchoDialog : IDialog<object>
             message2.Attachments.Add(receiptCard.ToAttachment());
 
             await context.PostAsync(message2);
-        }
+			context.Wait(MessageReceivedAsync);
+		}
         else
         {
             await context.PostAsync($"{this.count++}: You said {message.Text}");
