@@ -71,7 +71,13 @@ public class EchoDialog : IDialog<object>
             };
 
             message2.Attachments = new List<Attachment>();
-            message2.Attachments.Add(receiptCard.ToAttachment());
+			message2.Attachments.Add(new Attachment()
+			{
+				ContentUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png",
+				ContentType = "image/png",
+				Name = "Bender_Rodriguez.png"
+			});
+			message2.Attachments.Add(receiptCard.ToAttachment());
 
             await context.PostAsync(message2);
 			context.Wait(MessageReceivedAsync);
