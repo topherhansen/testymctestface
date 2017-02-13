@@ -39,7 +39,7 @@ public class EchoDialog : IDialog<object>
 				"Didn't get that!",
 				promptStyle: PromptStyle.Auto);
 		}
-		if (message.Text == "receipt")
+		else if (message.Text == "receipt")
 		{
 			var message2 = context.MakeMessage();
 
