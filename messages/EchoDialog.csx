@@ -77,7 +77,7 @@ public class EchoDialog : IDialog<object>
 				ContentType = "image/png",
 				Name = "Bender_Rodriguez.png"
 			});
-			message2.Attachments.Add(receiptCard.ToAttachment());
+			//message2.Attachments.Add(receiptCard.ToAttachment());
 
             await context.PostAsync(message2);
 			context.Wait(MessageReceivedAsync);
